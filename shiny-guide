@@ -1,0 +1,9 @@
+    private(set) var shapesTranslator: ShapesTranslatorProtocol
+    private(set) var elementsTransformer: ElementsTransformerProtocol
+    
+    mutating func reduce(_ currentState: AppState,
+                         _ action: GestureType) -> AppState {
+        
+        var newState = currentState
+        case .changeText(let action, id: let id):
+            newCollage = changeText(action, id: id, in: newCollage)
